@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="{{asset('images/g-translate.png')}}">
+		<title>{% block title 'Translify'%}</title>
+		{% block stylesheets %}
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+			<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+			<link rel="stylesheet" href="{{asset('css/styles.css')}}">
+			<link rel="stylesheet" href="{{asset('css/superhero.css')}}">
+			<link rel="stylesheet" href="{{asset('css/accueil-linear-gradient.css')}}">
+
+
+		{% endblock %}
+		{% block javascripts %}
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+		{% endblock %}
+	</head>
+	<body>
+		{{ include ('layouts/partials/_nav.html.twig')}}
+		{{ include ('layouts/partials/_flash_message.html.twig')}}
+		<main>
+			{% block body %}{% endblock %}
+		</main>
+
+		{{ include ('layouts/partials/_footer.html.twig')}}
+	</body>
+</html>

@@ -1,0 +1,14 @@
+{{form_start(form)}}
+{{form_row(form.name)}}
+{{form_row(form.type)}}
+{{form_row(form.poFile)}}
+{% for row in form.versions %}
+	<div class="card border-secondary mb-2">
+		<div class="card-header bg-light text-dark h4">version</div>
+		<div class="card-body ">
+			{{ form_row(row) }}
+		</div>
+	</div>
+{% endfor %}
+<input type="submit" class="btn btn-block btn-dark  w-100 " value="{{ submitButtonText|default('Create Project') }}" formnovalidate>
+{{form_end(form)}}

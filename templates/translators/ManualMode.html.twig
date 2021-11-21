@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Translate !'%}
+
+{% block body %}
+{% if translation is defined %}
+	<div class="container mt-4">
+		<h3 class="text-center mb-3">Welcome
+			{{translation.version.project.user.fullName}}
+			Let's Start Traduction</h3>
+		<div class="card border-dark ">
+			<div class="card-header bg-light text-dark fw-bold h5">Message To Translate</div>
+			<div class="card-body ">
+				{% for messageId in translation.message.value %}
+					<ul>
+						<li class="h5">{{messageId}}</li>
+					</ul>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<h5>
+		<i class="mt-4 fa fa-globe"></i>
+		{{translation.version.language.country}}</h5>
+	<h5>
+		<i class="fa fa-language"></i>
+		{{translation.version.language.name}}
+	</h5>
+</div>
+<div class="container ">
+{{ form_start(form, {'attr': {'id': 'myForm'}}) }}
+
+
+	{{form_widget(form)}}
+	{# <button class="mr-5 btn btn-md btn-dark text-white fw-bold" type="submit">Traduire</button> #}
+	<a class="btn btn-light btn-md" href="{{ path('app_home') }}" onclick="event.preventDefault();confirm('Do you want to download the new file ?')&& document.getElementById('myForm').submit();">Translate</a>
+	{{form_end(form)}}
+
+</div>{% endif %}{% endblock %}

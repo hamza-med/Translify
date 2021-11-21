@@ -1,0 +1,51 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Translate !'%}
+
+
+{% block body %}
+	<link rel="stylesheet" href="{{asset('css/cards.css')}}">
+	<h1 class="text-center mt-3">{{'traduction modes' | capitalize }}
+	</h1>
+	<div class="cards">
+<div  class="card">
+
+			<div class="card-container">
+				<img src="{{asset('images/manual.png')}}" alt="manual">
+			</div>
+			<div class="details">
+				<h2>Manual</h2>
+				<p>Manual Traduction</p>
+			<a href="{{path('app_translation_manual',{'id':translation.id})}}">	<button>Try
+					<span>&rarr;</span>
+</button></a>
+
+			</div>
+		</button>
+	</div>
+	<div class="card">
+		<div class="card-container">
+			<img src="{{asset('images/customer.png')}}" alt="Professional">
+		</div>
+		<div class="details">
+			<h2>Professional</h2>
+			<p>Professional Traduction.</p>
+			<button class="card-btn">Try
+				<span>&rarr;</span>
+			</button>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-container">
+			<img src="{{asset('images/api.png')}}" alt="Singapore">
+		</div>
+		<div class="details">
+			<h2>API</h2>
+			<p>Use API to translate your file .</p>
+			<button class="card-btn">Try
+				<span>&rarr;</span>
+			</button>
+
+		</div>
+	</div>
+</div>{% endblock %}

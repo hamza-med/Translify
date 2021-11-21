@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'New Version' %}
+{% block body %}
+	<div class="row mt-5 ">
+		<div class="col-md-3 mx-auto">
+			<h1 class="text-center">Create Version</h1>
+			{{ include ('versions/_form.html.twig') }}
+		</div>
+	</div>
+{% endblock %}

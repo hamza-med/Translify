@@ -1,0 +1,20 @@
+.premier-partie{
+    /*background: radial-gradient(ellipse closest-corner at 10% , #20374c 80%, #abb6c2);;*/
+    background: #20374c;
+    
+    
+}
+.deuxieme-partie{
+    background: #abb6c2;
+}
+.troisieme-partie{
+    background:#4c9be8 ;
+}
+.partie{
+    height: 100%;
+  margin: 0;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+  }

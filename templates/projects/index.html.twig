@@ -1,0 +1,70 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Find the best projects' %}
+
+
+{% block body %}
+	{% if projects|length > 0 %}
+		<h1 class="mb-4 text-center text-light">{{ pluralize(projects|length,'Project') }}
+		</h1>
+		{% for row in projects|batch(3) %}
+			<div class="mb-5 row">
+				{% for project in row %}
+					<div class="col-md-3 container ">
+						<article  class="bg-teal project   border border-light border-4 article">
+							<div class="mw-100 rounded-top overflow-hidden">
+								<a href="{{path('app_project_show',{'id':project.id})}}">
+									<img src="{{asset('images/language.png') }}" title="Project info" alt="{{ project.name }}" class=" w-75 rounded-top">
+								</a>
+							</div>
+							<hr>
+							<h2 class="h5 pb-1 px-5">
+								<a class="text-light text-decoration-none h3 text-wrap " href="{{path('app_project_show',{'id':project.id})}}">
+									{{ project.name | capitalize }}
+								</a>
+							</h2>
+							<h2 id="name" class="h5 pt-1 pb-1 px-3">
+								<a class="text-light fw-bold  text-decoration-none h4" href="{{ path('app_project_show',{'id':project.id}) }}">
+									{{ project.type | capitalize }}
+								</a>
+							</h2>
+							<p class="pb-3 px-3 ">
+								<small class="fw-bold text-light">Submitted by
+									{{ project.user.fullName }}
+								</small>
+							</p>
+							<h2 class="h5 pt-1 pb-1 px-3">
+								<a class="text-light text-decoration-none " href="{{ path('app_project_show',{'id':project.id}) }}">
+									{% for version in project.versions %}
+										{% if version is defined %}
+											<a class="text-decoration-none" href="{{path('app_version_show',{'id':version.id})}}">
+												<div class="container">
+													<span class="text-light  h5">Version:</span>
+													<span class="text-light h5">{{ version.versionNumber  }}</span>
+												</div>
+											</a>
+										{% endif %}
+									{% endfor %}
+								</a>
+							</h2>
+							<div class="container d-flex justify-content-center">
+								<button type="button" class="btn btn-secondary mb-2">
+									<a class="text-white fw-bold text-decoration-none p-3" href="{{ path('app_version_create',{'id':project.id}) }}">
+										Add version</a>
+								</button>
+							</div>
+
+						</article>
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	{% else %}
+		<p class="mt-5 h1 text-center">No Project Yet.
+			<a href="{{path('app_register')}}">Be the first ! Register now</a>
+		</p>
+	{% endif %}
+	<div class="d-flex justify-content-center">
+		{% do projects.setPageRange(2) %}
+		{{ knp_pagination_render(projects,'layouts/partials/_pagination.html.twig') }}</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'New Project' %}
+{% block body %}
+	<div class="row">
+		<div class="col-md-4 mx-auto">
+			<h1 class="text-center">Create Project</h1>
+			{{ include ('projects/_form.html.twig') }}
+		</div>
+	</div>
+{% endblock %}

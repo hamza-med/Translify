@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Update language' %}
+{% block body %}
+	<div class="row mt-5 ">
+		<div class="col-md-3 mx-auto">
+			<h1 class="text-center">Change Language</h1>
+			{{ include ('translators/_form.html.twig',{'submitButtonText':'Change Language'}) }}
+		</div>
+	</div>
+{% endblock %}

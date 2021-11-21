@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'New traduction' %}
+{% block body %}
+	<div class="row mt-5 ">
+		<div class="col-md-3 mx-auto">
+			<h1 class="text-center">Specify Language</h1>
+			{{ include ('translators/_form.html.twig') }}
+		</div>
+	</div>
+{% endblock %}
+

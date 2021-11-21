@@ -1,0 +1,87 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title 'Hello Translify' %}
+
+{% block stylesheets %}
+	{{parent()}}
+	<link rel="stylesheet" href="{{asset('css/cartes_accueil_mode_traduction.css')}}">
+{% endblock %}
+{% block body %}
+	{# <div class="container js-po-entries">
+			<a href="" class="load-data">load data</a>
+			<div class="po-data"></div>
+		</div> #}
+	<style>
+		{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+	<div class="row partie premier-partie">
+
+		<div class="col"><br><br><br><br><img src="{{asset('images/cloud-storage-no-background.png')}}" alt=""></div>
+		<div class="col">
+			<br><br><br><br><br><br><br>
+			<h1>The best solution to translate any plugin or theme for your website</h1>
+			<br><button class="btn btn-primary btn-lg">
+				<a class="text-decoration-none text-white" href="{{path('app_home')}}">See Projects ⟶</a>
+			</button>
+
+		</div>
+	</div>
+	{# <div class="row partie deuxieme-partie">
+			<div class="col-md-6">
+				<h1 class="text-center">Un stockage illimité pour vos projets</h1>
+			</div>
+			<div class="col">
+				<img src="{{asset('images/Hotpot.png')}}" alt="">
+			</div>
+		</div>
+		<div class="row partie troisieme-partie">
+			<div class="row ">
+				<div class="col text-center">
+					<h1>Nos Services</h1>
+				</div>
+			</div>
+			<div class="row">
+				<figure class="snip1174 light">
+					<img src="{{asset('images/poedit.png')}}" alt="" width="200" hight="200"/>
+					<figcaption>
+						<h2>Traduction Manuelle</h2>
+						<p>
+							Nous offrons l'opportunité de traduire vos fichiers manuellement à l'aide d'un éditeura
+						</p>
+						<a href="#">Voir Plus</a>
+					</figcaption>
+				</figure>
+				<figure class="snip1174 navy">
+					<img src="{{asset('images/g-translate.png')}}" alt=""/>
+					<figcaption>
+						<h2>Traduction automatique</h2>
+						<p>
+							Vous pouvez également traduire vos fichiers automatiquement
+						</p>
+						<a href="#">Voir Plus ⟶</a>
+					</figcaption>
+				</figure>
+				<figure class="snip1174 blue">
+					<img src="{{asset('images/Hotpot.png')}}" alt=""/>
+					<figcaption>
+						<h2>Traduction Professionnelle</h2>
+						<p></p>
+						<a href="#">Voir Plus ⟶</a>
+					</figcaption>
+				</figure>
+			</div>
+		</div> #}
+{% endblock %}
+{% block javascripts %}
+	<script src="{{asset('jQuery/carte_mode_traduction.js')}}"></script>
+{% endblock %}
